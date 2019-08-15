@@ -1,0 +1,57 @@
+@import '../../../../styles/pichincha_palette';
+
+.searchBox{
+    width: 40%;
+    margin: 0px 20px 0px 20px; 
+}
+
+
+.mat-row, .mat-header-row {  
+    min-width: 2800px;  
+    width: 100%;  
+ }
+
+
+ .example-container {
+    height: 400px;
+    overflow: auto;
+  }
+
+  .mat-header-cell{
+    
+    font-size: 14px;
+    background-color: white;
+    color: #4d4d4d;
+    border-bottom: 2px solid $primary;
+    font-family: 'Prelo Slab SemiBold';
+}      
+
+.mat-cell{
+    color: #4d4d4d;
+    padding: 5px;
+    font-family: 'Prelo Book';
+}
+
+.mat-cell.higlight{
+    color: white;
+    background-color: #4d4d4d;
+}
+
+
+
+
+.custom-fab-button{
+    background-color: #4d4d4d; 
+    color: white
+}
+
+
+.success{
+    background-color:#d4edda;
+    color: #155724;
+    font-family: 'Prelo Slab Bold';
+}
+
+.select-transparent{
+    background-color: green;
+}

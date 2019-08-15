@@ -1,0 +1,110 @@
+<mat-spinner *ngIf="!showForm" style="margin: 0 auto;" mode="indeterminate"></mat-spinner>
+<mat-tab-group *ngIf="showForm">
+  <mat-tab label="Datos del Producto">
+    <mat-card [class.mat-elevation-z2]="true">
+      <mat-card-content>
+        <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()">
+          <div class="mat-form-field--inline">
+            <mat-form-field [appearance]="appearance">
+              <mat-label>ID Producto</mat-label>
+              <input matInput placeholder="ID Producto" [formControl]="editProductForm.controls['id']" required readonly/>
+            </mat-form-field>
+            <mat-form-field [appearance]="appearance">
+              <mat-label>Part Number</mat-label>
+              <input matInput placeholder="Part Number" [formControl]="editProductForm.controls['partNumber']" required />
+
+              <mat-error *ngIf="partNumber.invalid">This field is required.</mat-error>
+            </mat-form-field>
+          </div>
+        </form>
+
+        <div class="mat-form-field--inline">
+          <mat-form-field [appearance]="appearance">
+            <mat-label>Organizacion</mat-label>
+            <input matInput placeholder="Organizacion" [formControl]="editProductForm.controls['idOrganizacao']" required />
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-error *ngIf="idOrganizacao.invalid">This field is required.</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card [class.mat-elevation-z4]="true">
+      <mat-card-content>
+        <div class="mat-form-field--inline">
+          <mat-form-field [appearance]="appearance">
+            <mat-label>ID Modelo</mat-label>
+            <input matInput placeholder="ID Modelo" [formControl]="editProductForm.controls['idModelo']" required />
+            <mat-error *ngIf="idModelo.invalid">This field is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field [appearance]="appearance">
+            <mat-label>Peso Bruto</mat-label>
+            <input matInput placeholder="Peso Bruto" [formControl]="editProductForm.controls['pesoBruto']" required />
+            <mat-error *ngIf="pesoBruto.invalid">This field is required.</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="mat-form-field--inline">
+          <mat-form-field [appearance]="appearance">
+            <mat-label>Unidad Peso</mat-label>
+            <input matInput placeholder="Unidad Peso" [formControl]="editProductForm.controls['unidadePeso']" required />
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-error *ngIf="unidadePeso.invalid">This field is required.</mat-error>
+          </mat-form-field>
+          <fieldset>
+            <legend>Necesita Revision</legend>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Si</mat-radio-button>
+              <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
+          </fieldset>
+        </div>
+        <div class="mat-form-field--inline">
+          <mat-form-field [appearance]="appearance">
+            <mat-label>Volume</mat-label>
+            <input matInput placeholder="Volume" [formControl]="editProductForm.controls['volume']" required />
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-error *ngIf="volume.invalid">This field is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field [appearance]="appearance">
+            <mat-label>Tipo de Producto</mat-label>
+            <input matInput placeholder="Tipo de Producto" [formControl]="editProductForm.controls['tipoProduto']" required />
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-error *ngIf="tipoProduto.invalid">This field is required.</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Socios">
+    <mat-card [class.mat-elevation-z2]="true">
+      <mat-card-content>
+        <div fxFlex fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between none" fxLayoutWrap="wrap">
+          <div fxLayout.lt-md="column" fxFlex.gt-xs="100%" fxFlex.gt-md="1">
+            <mat-form-field [appearance]="appearance" *ngFor="let key of fieldNames" style="padding: 10px;">
+              <mat-label>{{ startCase(key) }}</mat-label>
+              <input matInput placeholder=" startCase(key)" [(ngModel)]="product[key]" readonly />
+             
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+  <mat-tab label="Determinacion de Precio"> Determinacion de Precio </mat-tab>
+  <mat-tab label="Conversiones Especificas"> Conversiones Especificas </mat-tab>
+  <mat-tab label="Info. Complementaria"> Info. Complementaria </mat-tab>
+  <mat-tab label="Campos Adicionales"> Campos Adicionales </mat-tab>
+  <mat-tab label="Logs de Modificaciones"> Logs de Modificaciones </mat-tab>
+</mat-tab-group>
+<mat-toolbar *ngIf="showForm">
+  <mat-toolbar-row>
+    <span class="button-row">
+      <button mat-raised-button color="warn" [disabled]="!editProductForm.valid" (click)="submitForm()">
+        <mat-icon>check</mat-icon>Update
+      </button>
+      <button type="button" mat-raised-button color="warn" (click)="cancle()"><mat-icon>clear</mat-icon>Cancle</button>
+      <button type="button" mat-raised-button color="warn" (click)="reset()"><mat-icon>refresh</mat-icon>Reset</button>
+    </span>
+    <span class="toolbar-button-row"></span>
+  </mat-toolbar-row>
+</mat-toolbar>

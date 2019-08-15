@@ -1,0 +1,50 @@
+@import '../../../styles/pichincha_palette';
+
+table {
+    width: 100%;
+}
+.mat-card {
+    text-align: center;
+    font-family: 'Prelo Book';
+    color: $accent;
+    font-size: 14px;
+
+}
+.mat-card-footer {
+color: white;
+background-color: #4d4d4d;
+}
+.mat-table {
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        font-family: 'Prelo Book';
+      }
+
+.mat-header-cell{
+    
+    font-size: 16px;
+    background-color: white;
+    color: #4d4d4d;
+    border-bottom: 2px solid $primary;
+    //font-family: 'Prelo Slab SemiBold';
+}      
+
+.mat-cell{
+    color: #4d4d4d;
+    
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.processing-row .mat-cell{
+   
+   font-size: 16px;
+   font-family: 'Prelo Slab SemiBold';
+}
+
+.editclass{
+    font-size: 32px;
+    font-family: 'Prelo Slab SemiBold';
+    color: $accent
+}

@@ -1,0 +1,79 @@
+:host {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0px 0 6px rgba(0, 0, 0, 0.24);
+}
+.nav-brand {
+    text-align: center;
+    margin-top: 10px;
+}
+.topnav-icon {
+    text-decoration: none;
+    display: flex;
+    color: #fff;
+}
+
+.nav-spacer {
+    flex: 1 1 auto;
+}
+
+.visible-md {
+    display: none;
+}
+.visible-sm {
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    .visible-md {
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .visible-sm {
+        display: block;
+    }
+    .nav-brand {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .hidden-sm {
+        display: none;
+    }
+}
+.mat-toolbar.mat-primary{
+    background-color: white;
+    color: #4D4D4D;
+}
+
+.mat-toolbar-row.top-menu{
+    background-color:#4D4D4D;
+   color: white;
+    max-height: 40px;
+    //font-family: 'Prelo Slab SemiBold';
+    font-family: 'Prelo Book';
+    font-size: 14px;
+    justify-content: center;
+
+}
+
+.mat-toolbar-row.top-menu a{
+padding-left: 10px; 
+padding-right: 10px; 
+border-right:   1px solid #ec5454;
+line-height: 10px;
+text-decoration: none;
+color: white;
+}
+
+
+.mat-toolbar-row.top-menu a:last-child{
+   
+    border-right:   0px solid #ec5454;
+   
+    }
+

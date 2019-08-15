@@ -1,0 +1,61 @@
+<!-- <div class="landing-text-heading">
+  Te presentamos la nueva Banca web
+</div>
+
+<div class="landing-text-subheading" contenteditable="true">
+  Ahora con un menú reorganizado para simplificar tus transacciones y brindarte una mejor experiencia.
+</div>
+ -->
+
+<input type="file" style="display: none" #fileinput (change)="onFileSelected($event)" />
+
+<div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutAlign="space-between none"  >
+  <div fxFlex="40" >
+    <mat-form-field>
+      <input type="tel" matInput placeholder="File" disabled [(ngModel)]="selectedFileName" name="file" />
+      <mat-icon matSuffix>attach_file</mat-icon>
+    </mat-form-field> <br>
+    <button style="margin-right: 10px; margin-top: 10px;" mat-raised-button color="primary" (click)="fileinput.click()">Select File</button>
+      <button style="margin-right: 10px;margin-top: 10px;" mat-raised-button color="primary" (click)="onFileUpload($event)">Upload File</button>
+  </div>
+ 
+  <div fxFlex="20" >
+   <div class="landing-text-subheading"> Size:</div> <div class="landing-text">{{selectedFile?.size/1024/1024 | number}} MB</div>    
+  </div>
+  <div fxFlex="20" >
+    <div class="landing-text-subheading">Last Modified Time:</div> <div class="landing-text">{{selectedFile?.lastModified | date:'medium'}}</div>    
+  </div>
+  <div fxFlex="20" >
+    <div class="mb-20 landing-text-subheading">Upload Progress:</div> 
+    <div class="landing-text"><mat-progress-bar mode="determinate" [value]="uploadPercentage" color="warn"></mat-progress-bar></div>
+    
+  </div>
+  
+</div>
+
+<br><br><mat-divider></mat-divider>
+<br><br>
+
+<div fxFlex fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutAlign="space-between none"  >
+    <div fxFlex="40" >
+      <mat-form-field>
+        <input type="tel" matInput placeholder="File" disabled [(ngModel)]="selectedFileName" name="file" />
+        <mat-icon matSuffix>attach_file</mat-icon>
+      </mat-form-field> <br>
+      <button style="margin-right: 10px; margin-top: 10px;" mat-raised-button color="primary" (click)="fileinput.click()">Select File</button>
+        <button style="margin-right: 10px;margin-top: 10px;" mat-raised-button color="primary" (click)="onFileUpload($event)">Upload File</button>
+    </div>
+   
+    <div fxFlex="20" >
+     <div class="landing-text-subheading"> Size:</div> <div class="landing-text">{{selectedFile?.size/1024/1024 | number}} MB</div>    
+    </div>
+    <div fxFlex="20" >
+      <div class="landing-text-subheading">Last Modified Time:</div> <div class="landing-text">{{selectedFile?.lastModified | date:'medium'}}</div>    
+    </div>
+    <div fxFlex="20" >
+      <div class="mb-20 landing-text-subheading">Upload Progress:</div> 
+      <div class="landing-text"><mat-progress-bar mode="determinate" [value]="uploadPercentage" color="warn"></mat-progress-bar></div>
+      
+    </div>
+    
+  </div>

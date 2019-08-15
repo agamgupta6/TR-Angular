@@ -1,0 +1,60 @@
+@import '../../../../styles/pichincha_palette';
+.mat-form-field--inline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mat-form-field--inline .mat-form-field {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.mat-form-field--inline .mat-form-field:nth-child(1) {
+    margin-right: 10px;
+}
+.mat-tab-label{
+    color: #4d4d4d;
+    font-family: 'Prelo Slab Bold';
+   
+}
+
+.mat-tab-label.mat-tab-label-active{
+    color: $accent;
+}
+
+.mat-card{
+    margin: 10px;
+}
+
+
+fieldset
+{
+ 
+  min-width:500px;
+  max-height: 200px;
+  padding:10px;	
+  border:1px solid #e0e0e0;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;
+    color: #4d4d4d;
+    margin-top: -25px;
+}
+
+mat-radio-button{
+    padding-left: 20px; 
+}
+
+mat-tab-body{
+    max-height: 500px;
+    min-height: 500px;
+}
+
+.success{
+    background-color:#d4edda;
+    color: #155724;
+    font-family: 'Prelo Slab Bold'; 
+}

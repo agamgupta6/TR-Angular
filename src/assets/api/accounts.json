@@ -1,0 +1,10 @@
+{
+     "activated": true,
+     "authorities": ["ROLE_ADMIN"],
+     "email": "abcd@1234",
+     "firstName": "Agam ",
+     "langKey": "string",
+     "lastName": "Gupta",
+     "login": "Agam Gupta",
+     "imageUrl": "string"
+}

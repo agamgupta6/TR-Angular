@@ -1,0 +1,32 @@
+<div id="sidebar">
+  <mat-nav-list>
+    <br />
+    <ng-container *ngFor="let menu of menus">
+      <a *ngIf="!menu.menutitle"  mat-list-item [routerLinkActive]="'active-link'" [routerLink]="['/' + menu.routerlink]">
+        {{ menu.routerText | translate }}
+      </a>
+     
+
+      <!--  <a mat-list-item [routerLinkActive]="'active-link'" [routerLink]="['/components']">
+             {{ 'Material Component' | translate }}
+        </a> -->
+      <!--  <a mat-list-item [routerLinkActive]="'active-link'" [routerLink]="['/blank-page']">
+             {{ 'Blank Page' | translate }}
+        </a> -->
+      <mat-accordion *ngIf="menu.menutitle">
+        <mat-expansion-panel  [class.mat-elevation-z0]="true" dense [expanded]="ifActiveRoute(menu.submenus)">
+          <mat-expansion-panel-header>
+            <div [className]="ifActiveRoute(menu.submenus) ? 'expansion-panel-bold' : ''">
+              {{menu.menutitle}}
+            </div>
+          </mat-expansion-panel-header>
+
+          <a *ngFor="let submenu of menu.submenus" mat-list-item [routerLinkActive]="'active-link'" [routerLink]="['/' + submenu.routerlink]">
+            {{ submenu.routerText | translate }}
+          </a>
+          
+        </mat-expansion-panel>
+      </mat-accordion>
+    </ng-container>
+  </mat-nav-list>
+</div>

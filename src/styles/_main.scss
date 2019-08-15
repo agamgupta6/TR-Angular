@@ -1,0 +1,107 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Fontil Sans';
+}
+
+.main-container {
+    position: absolute;
+    top: 118px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    //background-image: url('../assets/images/bg.svg');
+    background-size: cover;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+
+@font-face {
+    font-family: 'Prelo Slab SemiBold';
+    src: url('../assets/fonts/bancaweb/PreloSlab-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Prelo Slab Book';
+    src: url('../assets/fonts/bancaweb/PreloSlab-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Prelo Book';
+    src: url('../assets/fonts/bancaweb/Prelo-Book.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Prelo Slab Bold';
+    src: url('../assets/fonts/bancaweb/PreloSlab-Bold.otf') format('opentype');
+}
+
+.mat-raised-button.mat-primary{
+    background-image: url('../assets/images/button-bg.svg');
+    background-repeat: no-repeat;
+    color: $accent;
+    font-family: 'Prelo Book';
+    font-size: 16px;
+}
+
+.mat-form-field .mat-form-field-underline{
+    background-color: #4D4D4D;
+} 
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+    color: #4D4D4D;
+  }
+
+.mat-form-field .mat-form-field-label{
+    color: $accent;
+    font-family: "Prelo Slab SemiBold";
+}
+
+.mat-form-field.mat-focused .mat-form-field-label{
+    color: $accent;
+    font-family: "Prelo Slab SemiBold";
+}
+
+.mat-form-field{
+    color: #4D4D4D;
+    font-family: "Prelo Slab SemiBold"
+}
+
+
+.landing-text-subheading{
+    color: $accent;
+    font-family: 'Prelo Book';
+    font-size: 16px;
+    padding: 20px 0px 10px;
+}
+
+
+.landing-text{
+    
+    font-family: 'Prelo Book';
+    font-size: 16px;
+    padding: 20px 0px 10px;
+}
+
+.topnav-text{
+    font-family: Prelo Slab SemiBold;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1em
+}
+
+.button-row button{
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.toolbar-button-row{
+    flex: 1 1 auto;
+}

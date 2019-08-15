@@ -1,0 +1,85 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row>
+        <button type="button" mat-icon-button  (click)="toggleSidebar()">
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <div class="nav-brand">
+            <img src="assets/images/logo.svg"  width="260px">
+        </div>
+        
+        <span class="nav-spacer"></span>
+        <!-- commenting because do not need translation -->
+        <!-- <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="language">
+            <mat-icon>language</mat-icon>
+        </button>
+        <mat-menu #language="matMenu">
+            <button mat-menu-item (click)="changeLang('en')">
+                <span>{{ 'English' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="changeLang('fr')">
+                <span>{{ 'French' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="changeLang('ur')">
+                <span>{{ 'Urdu' | translate }}s</span>
+            </button>
+        </mat-menu> -->
+        <!-- adding because need to see notification -->
+        <button class="hidden-sm" mat-icon-button [matMenuTriggerFor]="language">
+            <mat-icon matBadge="3" matBadgeColor="warn">notifications</mat-icon>
+        </button>
+        <mat-menu #language="matMenu">
+            <button mat-menu-item (click)="changeLang('en')">
+                <span>Operations completed</span>
+            </button>
+            <button mat-menu-item (click)="changeLang('fr')">
+                <span>Visado completed</span>
+            </button>
+            <button mat-menu-item (click)="changeLang('ur')">
+                <span>Error in validation</span>
+            </button>
+        </mat-menu>
+    
+    
+        <button  mat-icon-button [matMenuTriggerFor]="profile">
+           <!--  <mat-icon>account_circle</mat-icon> -->
+            <img src="assets/images/profile.png" alt="" style="background-size: cover;background-position: top center;
+            width: 30px;height: 30px;border-radius: 50%;" >
+        </button>
+        <div class="topnav-text hidden-sm" *ngIf="isAuthenticated()">{{account.login}} </div> 
+        <mat-menu #profile="matMenu">
+            <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>{{ 'Profile' | translate }}</span>
+            </button>
+           <!--  <button mat-menu-item>
+                <mat-icon>inbox</mat-icon>
+                <span>{{ 'Inbox' | translate }}</span>
+            </button> -->
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon>
+                <span>{{ 'Settings' | translate }}</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <span>{{ 'Log Out' | translate }}</span>
+            </button>
+        </mat-menu>
+        
+        <button class="hidden-sm" mat-icon-button (click)="onLoggedout()">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </mat-toolbar-row>
+    <!-- <mat-toolbar-row style="background-color: #4d4d4d;color: white;max-height: 40px;"> -->
+        <mat-toolbar-row class="top-menu">
+        
+        <a routerLink='/dashboard' >Master Data</a>
+        <a routerLink='/product'>Product</a>
+        <a routerLink='/forms'>Configuration</a>
+        
+        <a routerLink='/tables'>History</a>
+        <a routerLink='/charts'>Reports</a>
+        <a routerLink='/dashboard'>Help</a>
+        <a routerLink='/dashboard'>Analysis</a>
+       
+    </mat-toolbar-row>
+</mat-toolbar>

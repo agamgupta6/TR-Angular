@@ -1,0 +1,25 @@
+<div *ngIf='!editMode'  class='' >{{ content}}
+    <div *jhiHasAnyAuthority="'ROLE_USER'">
+        <button class="editButton" color="warn" mat-icon-button aria-label="Example icon-button with a heart icon" (click)='editMode=true'>
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button class="editButton" color="accent" mat-icon-button aria-label="Example icon-button with a heart icon" (click)="saveContent()">
+                <mat-icon>save</mat-icon>
+              </button>
+            </div>
+</div>
+<!-- <input *ngIf='editMode' (focusout)="onFocusOut()" (keydown.enter)='$event.target.blur()' (keydown.escape)='$event.target.blur()' [(ngModel)]='data' class='inputclass'
+  appAutofocus type='text' (keydown.enter)='$event.target.blur()' (focusout)="editMode=false"> -->
+
+  
+      <textarea name="" id="" cols="30" rows="10"
+      *ngIf='editMode' (focusout)="onFocusOut()"  (keydown.escape)='$event.target.blur()' [(ngModel)]='content' class='inputclass'
+  appAutofocus   (focusout)="editMode=false"
+      
+      ></textarea>
+          
+ <!--  <mat-form-field>
+      <input *ngIf='editMode' (focusout)="onFocusOut()" (keydown.enter)='$event.target.blur()' [(ngModel)]='data' class='inputclass'
+  appAutofocus type='text' (keydown.enter)='$event.target.blur()' (focusout)="editMode=false">
+      <mat-icon matSuffix>attach_file</mat-icon>
+    </mat-form-field> -->
