@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiConfiguration {
-  rootUrl: string = '//10.0.176.53:8081/productmanagement';
+  rootUrl: string = '//rsgconsole.net:8089/productmanagement';
 }
 
 export interface ApiConfigurationInterface {
